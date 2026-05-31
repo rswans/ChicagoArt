@@ -25,11 +25,22 @@ struct ContentView: View {
                 // Unfortunately the image API has a loader that I couldn't work around using AsyncImage, so it is displayed as a webView instead
                 ImageWebView(url: imageURL)
                     .frame(height: 400)
-                    .accessibilityLabel(Text("An image of the painting"))
+                    .accessibilityLabel(Text(viewModel.alternativeTextLabel))
                     .accessibilityHint(Text(viewModel.alternativeTextHint))
             }
-            Text(viewModel.artwork?.artist_display ?? "")
-            Text(viewModel.artwork?.description ?? "")
+            if let title = viewModel.title {
+                Text(title)
+                    .font(.title)
+            }
+            if let artistDetails = viewModel.artistDetails {
+                Text(artistDetails)
+                    .font(.caption)
+                    .foregroundStyle(.gray)
+            }
+            if let description = viewModel.description {
+                Text(description)
+                    .font(.body)
+            }
         }
     }
     
@@ -38,6 +49,8 @@ struct ContentView: View {
             Color.gray
                 .frame(height: 400)
                 .frame(maxWidth: .infinity)
+            Text(LoadingConstants.shortLoadingContent)
+                .redacted(reason: .placeholder)
             Text(LoadingConstants.shortLoadingContent)
                 .redacted(reason: .placeholder)
             Text(LoadingConstants.longLoadingContent)

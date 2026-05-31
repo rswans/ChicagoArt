@@ -18,6 +18,7 @@ enum NetworkError: Error {
 
 struct Artwork: Codable {
     let data: ArtworkData
+    let config: ImageConfig
 }
 
 struct ArtworkData: Codable {
@@ -28,6 +29,11 @@ struct ArtworkData: Codable {
     let short_description: String
     let thumbnail: Thumbnail
     let image_id: String
+}
+
+struct ImageConfig: Codable {
+    let iiif_url: String
+    let website_url: String
 }
 
 struct Thumbnail: Codable {

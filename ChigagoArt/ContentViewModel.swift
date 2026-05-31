@@ -1,5 +1,6 @@
 import Foundation
 import Observation
+internal import UIKit
 
 @Observable final class ContentViewModel {
     enum Constants {
@@ -12,7 +13,8 @@ import Observation
     
     // MARK: Internal Properties
     private(set) var isLoading = false
-    private(set) var artwork: ArtworkData?
+    private var artwork: ArtworkData?
+    private var imageConfig: ImageConfig?
     
     var alternativeTextHint: String {
         artwork?.thumbnail.alt_text ?? Constants.noTextHintAvailable
@@ -21,9 +23,21 @@ import Observation
     var alternativeTextLabel: String {
         Constants.alternativeTextLabel
     }
+   
+    var title: String? {
+        artwork?.title
+    }
+    
+    var artistDetails: String? {
+        artwork?.artist_display
+    }
+    
+    var description: String? {
+        artwork?.description.decoded
+    }
     
     var imageURL: URL? {
-        URL(string: "https://www.artic.edu/iiif/2/\(artwork?.image_id ?? "")/full/843,/0/default.jpg")
+        URL(string: "\(imageConfig?.iiif_url ?? "")/\(artwork?.image_id ?? "")/full/843,/0/default.jpg")
     }
     
     // MARK: Initialisers
@@ -35,7 +49,20 @@ import Observation
     @MainActor
     func getArtwork() async {
         isLoading = true
-        artwork = try? await networking.getArtwork(id: "129884").data
+        guard let data = try? await networking.getArtwork(id: "129884") else { return }
+        self.artwork = data.data
+        imageConfig = data.config
         isLoading = false
+    }
+}
+
+extension String {
+    var decoded: String {
+        let attr = try? NSAttributedString(data: Data(utf8), options: [
+            .documentType: NSAttributedString.DocumentType.html,
+            .characterEncoding: String.Encoding.utf8.rawValue
+        ], documentAttributes: nil)
+        
+        return attr?.string ?? self
     }
 }
