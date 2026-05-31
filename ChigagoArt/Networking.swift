@@ -6,7 +6,6 @@ protocol NetworkingServiceProtocol {
 
 final class NetworkingService: NetworkingServiceProtocol {
     func getArtwork(id: String) async throws -> Artwork {
-        let filteredfields = "id, title,artist_display,description,short_description,thumbnail"
         guard let url = URL(string: "https://api.artic.edu/api/v1/artworks/\(id)") else { throw NetworkError.invalidURL }
         let (data, _) = try await URLSession.shared.data(from: url)
         return try JSONDecoder().decode(Artwork.self, from: data)
@@ -28,6 +27,7 @@ struct ArtworkData: Codable {
     let description: String
     let short_description: String
     let thumbnail: Thumbnail
+    let image_id: String
 }
 
 struct Thumbnail: Codable {
