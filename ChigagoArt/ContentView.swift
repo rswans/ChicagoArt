@@ -1,24 +1,17 @@
-//
-//  ContentView.swift
-//  ChigagoArt
-//
-//  Created by Richard Swanson on 31/05/2026.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    let viewModel: ContentViewModel
     var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text(viewModel.artwork?.short_description ?? "")
         }
         .padding()
+        .task {
+            await viewModel.getArtwork()
+        }
     }
-}
-
-#Preview {
-    ContentView()
 }

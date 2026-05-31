@@ -1,10 +1,3 @@
-//
-//  ChigagoArtTests.swift
-//  ChigagoArtTests
-//
-//  Created by Richard Swanson on 31/05/2026.
-//
-
 import XCTest
 @testable import ChigagoArt
 
