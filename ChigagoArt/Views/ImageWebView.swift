@@ -12,6 +12,7 @@ struct ImageWebView: View {
 				.frame(height: webViewHeight)
         } else {
             Color.yellow
+				.frame(height: 400)
         }
     }
 }
@@ -52,11 +53,9 @@ struct WebView: UIViewRepresentable {
 				self.height = height
 			}
 
-			// Handle KVO (Key-Value Observing) changes for the content size
 			override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
 				if keyPath == Constants.contentSizeKeyPath, let scrollView = object as? UIScrollView {
 					DispatchQueue.main.async {
-						// Update the SwiftUI binding with the actual height of the HTML content
 						self.height.wrappedValue = scrollView.contentSize.height
 					}
 				}

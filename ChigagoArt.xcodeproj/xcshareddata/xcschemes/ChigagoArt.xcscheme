@@ -57,6 +57,17 @@
                ReferencedContainer = "container:ChigagoArt.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1D323A1B30696D71008BECF9"
+               BuildableName = "ChigagoArtSnapshotTests.xctest"
+               BlueprintName = "ChigagoArtSnapshotTests"
+               ReferencedContainer = "container:ChigagoArt.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

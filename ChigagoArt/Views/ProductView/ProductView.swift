@@ -4,6 +4,7 @@ import WebKit
 struct ProductView: View {
 	private enum Constants {
 		static var stackSpacing: CGFloat = 8
+		static var stackHorizontalPadding: CGFloat = 16
 		static var estimatedImageHeight: CGFloat = 400
 	}
 
@@ -18,9 +19,10 @@ struct ProductView: View {
 					loadedArtworkView(viewModel: viewModel)
 				}
 			}
-			.padding()
+			.padding(.horizontal, Constants.stackHorizontalPadding)
+			.padding(.vertical, 8)
 			.task {
-				await viewModel.getArtwork(id: "129884")
+				await viewModel.getArtwork()
 			}
 		}
 	}
@@ -56,7 +58,7 @@ struct ProductView: View {
 				.frame(maxWidth: .infinity)
 			Text(LoadingConstants.shortLoadingContent)
 				.redacted(reason: .placeholder)
-			Text(LoadingConstants.shortLoadingContent)
+			Text(LoadingConstants.shorterLoadingContent)
 				.redacted(reason: .placeholder)
 			Text(LoadingConstants.longLoadingContent)
 				.redacted(reason: .placeholder)

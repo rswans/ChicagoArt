@@ -6,7 +6,18 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		1D323A3B30696F54008BECF9 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 1D323A3A30696F54008BECF9 /* SnapshotTesting */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
+		1D323A2030696D71008BECF9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1DCA407D2FCC74C9005884CE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1DCA40842FCC74C9005884CE;
+			remoteInfo = ChigagoArt;
+		};
 		1DCA40932FCC74CA005884CE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1DCA407D2FCC74C9005884CE /* Project object */;
@@ -25,12 +36,40 @@
 
 /* Begin PBXFileReference section */
 		1D323A0F306936F6008BECF9 /* ChigagoArt.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = ChigagoArt.xctestplan; sourceTree = "<group>"; };
+		1D323A1C30696D71008BECF9 /* ChigagoArtSnapshotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChigagoArtSnapshotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DCA40852FCC74C9005884CE /* ChigagoArt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChigagoArt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DCA40922FCC74CA005884CE /* ChigagoArtTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChigagoArtTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DCA409C2FCC74CA005884CE /* ChigagoArtUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChigagoArtUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		1D323A3430696D8E008BECF9 /* Exceptions for "Testing" folder in "ChigagoArt" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				SnapshotTests/ProductViewSnapshotTests.swift,
+				UnitTesting/ChicagoArtUnitTests/Infrastructure/MockNetworking.swift,
+				UnitTesting/ChicagoArtUnitTests/Infrastructure/NetworkingTests.swift,
+				UnitTesting/ChicagoArtUnitTests/ProductViewTests/ProductViewModelTests.swift,
+			);
+			target = 1DCA40842FCC74C9005884CE /* ChigagoArt */;
+		};
+		1D323A3530696D8E008BECF9 /* Exceptions for "Testing" folder in "ChigagoArtTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				UnitTesting/ChicagoArtUnitTests/Infrastructure/MockNetworking.swift,
+				UnitTesting/ChicagoArtUnitTests/Infrastructure/NetworkingTests.swift,
+				UnitTesting/ChicagoArtUnitTests/ProductViewTests/ProductViewModelTests.swift,
+			);
+			target = 1DCA40912FCC74CA005884CE /* ChigagoArtTests */;
+		};
+		1D323A3630696D8E008BECF9 /* Exceptions for "Testing" folder in "ChigagoArtSnapshotTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				SnapshotTests/ProductViewSnapshotTests.swift,
+				UnitTesting/ChicagoArtUnitTests/Infrastructure/MockNetworking.swift,
+			);
+			target = 1D323A1B30696D71008BECF9 /* ChigagoArtSnapshotTests */;
+		};
 		1DCA40BC2FCC93C5005884CE /* Exceptions for "ChigagoArt" folder in "ChigagoArt" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -41,9 +80,14 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		1D3239FE30692FFE008BECF9 /* UnitTesting */ = {
+		1D323A2530696D8E008BECF9 /* Testing */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = UnitTesting;
+			exceptions = (
+				1D323A3430696D8E008BECF9 /* Exceptions for "Testing" folder in "ChigagoArt" target */,
+				1D323A3530696D8E008BECF9 /* Exceptions for "Testing" folder in "ChigagoArtTests" target */,
+				1D323A3630696D8E008BECF9 /* Exceptions for "Testing" folder in "ChigagoArtSnapshotTests" target */,
+			);
+			path = Testing;
 			sourceTree = "<group>";
 		};
 		1DCA40872FCC74C9005884CE /* ChigagoArt */ = {
@@ -57,6 +101,14 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1D323A1930696D71008BECF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D323A3B30696F54008BECF9 /* SnapshotTesting in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1DCA40822FCC74C9005884CE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -81,13 +133,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D323A3930696F54008BECF9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1DCA407C2FCC74C9005884CE = {
 			isa = PBXGroup;
 			children = (
 				1D323A0F306936F6008BECF9 /* ChigagoArt.xctestplan */,
 				1DCA40872FCC74C9005884CE /* ChigagoArt */,
+				1D323A2530696D8E008BECF9 /* Testing */,
+				1D323A3930696F54008BECF9 /* Frameworks */,
 				1DCA40862FCC74C9005884CE /* Products */,
-				1D3239FE30692FFE008BECF9 /* UnitTesting */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +157,7 @@
 				1DCA40852FCC74C9005884CE /* ChigagoArt.app */,
 				1DCA40922FCC74CA005884CE /* ChigagoArtTests.xctest */,
 				1DCA409C2FCC74CA005884CE /* ChigagoArtUITests.xctest */,
+				1D323A1C30696D71008BECF9 /* ChigagoArtSnapshotTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -104,6 +165,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1D323A1B30696D71008BECF9 /* ChigagoArtSnapshotTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D323A2230696D71008BECF9 /* Build configuration list for PBXNativeTarget "ChigagoArtSnapshotTests" */;
+			buildPhases = (
+				1D323A1830696D71008BECF9 /* Sources */,
+				1D323A1930696D71008BECF9 /* Frameworks */,
+				1D323A1A30696D71008BECF9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1D323A2130696D71008BECF9 /* PBXTargetDependency */,
+			);
+			name = ChigagoArtSnapshotTests;
+			packageProductDependencies = (
+				1D323A3A30696F54008BECF9 /* SnapshotTesting */,
+			);
+			productName = ChigagoArtSnapshotTests;
+			productReference = 1D323A1C30696D71008BECF9 /* ChigagoArtSnapshotTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		1DCA40842FCC74C9005884CE /* ChigagoArt */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DCA40A62FCC74CA005884CE /* Build configuration list for PBXNativeTarget "ChigagoArt" */;
@@ -117,6 +199,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				1D323A2530696D8E008BECF9 /* Testing */,
 				1DCA40872FCC74C9005884CE /* ChigagoArt */,
 			);
 			name = ChigagoArt;
@@ -138,9 +221,6 @@
 			);
 			dependencies = (
 				1DCA40942FCC74CA005884CE /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				1D3239FE30692FFE008BECF9 /* UnitTesting */,
 			);
 			name = ChigagoArtTests;
 			packageProductDependencies = (
@@ -179,6 +259,10 @@
 				LastSwiftUpdateCheck = 2630;
 				LastUpgradeCheck = 2630;
 				TargetAttributes = {
+					1D323A1B30696D71008BECF9 = {
+						CreatedOnToolsVersion = 26.3;
+						TestTargetID = 1DCA40842FCC74C9005884CE;
+					};
 					1DCA40842FCC74C9005884CE = {
 						CreatedOnToolsVersion = 26.3;
 					};
@@ -201,6 +285,9 @@
 			);
 			mainGroup = 1DCA407C2FCC74C9005884CE;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				1D323A3830696F3B008BECF9 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 1DCA40862FCC74C9005884CE /* Products */;
 			projectDirPath = "";
@@ -209,11 +296,19 @@
 				1DCA40842FCC74C9005884CE /* ChigagoArt */,
 				1DCA40912FCC74CA005884CE /* ChigagoArtTests */,
 				1DCA409B2FCC74CA005884CE /* ChigagoArtUITests */,
+				1D323A1B30696D71008BECF9 /* ChigagoArtSnapshotTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1D323A1A30696D71008BECF9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1DCA40832FCC74C9005884CE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -238,6 +333,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1D323A1830696D71008BECF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1DCA40812FCC74C9005884CE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -262,6 +364,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1D323A2130696D71008BECF9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1DCA40842FCC74C9005884CE /* ChigagoArt */;
+			targetProxy = 1D323A2030696D71008BECF9 /* PBXContainerItemProxy */;
+		};
 		1DCA40942FCC74CA005884CE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1DCA40842FCC74C9005884CE /* ChigagoArt */;
@@ -275,6 +382,53 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		1D323A2330696D71008BECF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R2MTNPD432;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Swans.ChigagoArtSnapshotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChigagoArt.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ChigagoArt";
+			};
+			name = Debug;
+		};
+		1D323A2430696D71008BECF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R2MTNPD432;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Swans.ChigagoArtSnapshotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChigagoArt.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ChigagoArt";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		1DCA40A42FCC74CA005884CE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -564,6 +718,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1D323A2230696D71008BECF9 /* Build configuration list for PBXNativeTarget "ChigagoArtSnapshotTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D323A2330696D71008BECF9 /* Debug */,
+				1D323A2430696D71008BECF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1DCA40802FCC74C9005884CE /* Build configuration list for PBXProject "ChigagoArt" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -601,6 +764,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1D323A3830696F3B008BECF9 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.19.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1D323A3A30696F54008BECF9 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D323A3830696F3B008BECF9 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1DCA407D2FCC74C9005884CE /* Project object */;
 }

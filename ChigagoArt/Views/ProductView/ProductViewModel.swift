@@ -13,10 +13,12 @@ internal import UIKit
 	private var artwork: ArtworkData?
 	private var imageConfig: ImageConfig?
 
+	let artworkID: String
+
     // MARK: Internal Properties
 
-    private(set) var isLoading = false
-    
+    private(set) var isLoading = true
+
     var alternativeTextHint: String {
         return artwork?.thumbnail.alt_text ?? Constants.noTextHintAvailable
     }
@@ -46,15 +48,16 @@ internal import UIKit
     }
     
     // MARK: Initialisers
-    init(networking: NetworkingServiceProtocol) {
+	init(artworkID: String,
+		networking: NetworkingServiceProtocol) {
+		self.artworkID = artworkID
         self.networking = networking
     }
     
     // MARK: Public Properties
     @MainActor
-	func getArtwork(id: String) async {
-        isLoading = true
-        guard let data = try? await networking.getArtwork(id: id) else { return }
+	func getArtwork() async {
+        guard let data = try? await networking.getArtwork(id: artworkID) else { return }
         self.artwork = data.data
         imageConfig = data.config
         isLoading = false

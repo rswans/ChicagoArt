@@ -15,6 +15,14 @@ final class MockNetworking: NetworkingServiceProtocol {
 	}
 }
 
+extension Artwork {
+	static func stub(data: ArtworkData = .stub(),
+					 config: ImageConfig = .stub()) -> Artwork {
+		Artwork(data: data,
+				config: config)
+	}
+}
+
 extension ArtworkData {
 	static func stub(id: Double = 12345,
 					 title: String = "Cat",

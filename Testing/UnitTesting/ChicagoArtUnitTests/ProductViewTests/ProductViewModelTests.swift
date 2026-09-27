@@ -12,13 +12,17 @@ final class ProductViewModelTests: XCTestCase {
 
 	@MainActor
 	func test_networking_returnsExpectedArtwork() async {
-		let productViewModel = ProductViewModel(networking: mockNetworking)
+		let productViewModel = ProductViewModel(artworkID: "12345678",
+												networking: mockNetworking)
 
-		await productViewModel.getArtwork(id: "12345678")
+		await productViewModel.getArtwork()
 		XCTAssertEqual(productViewModel.title, "Cat")
 		XCTAssertEqual(productViewModel.description, "A particularly good drawing of a cat")
 		XCTAssertEqual(productViewModel.alternativeTextHint, "alt text")
 		XCTAssertEqual(productViewModel.alternativeTextLabel, "An image of the painting")
 		XCTAssertFalse(productViewModel.isLoading)
+
+		XCTAssertEqual(mockNetworking.artworkID, "12345678")
+		XCTAssertEqual(mockNetworking.getArtworkCalledCount, 1)
     }
 }
