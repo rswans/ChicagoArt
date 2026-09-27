@@ -2,26 +2,27 @@ import Foundation
 import Observation
 internal import UIKit
 
-@Observable final class ContentViewModel {
+@Observable final class ProductViewModel {
     enum Constants {
         static let alternativeTextLabel = "An image of the painting"
         static let noTextHintAvailable = "Sorry, alternative text was not provided for this image"
     }
     
     // MARK: Private Properties
-    private let networking: NetworkingServiceProtocol
-    
+	private let networking: NetworkingServiceProtocol
+	private var artwork: ArtworkData?
+	private var imageConfig: ImageConfig?
+
     // MARK: Internal Properties
+
     private(set) var isLoading = false
-    private var artwork: ArtworkData?
-    private var imageConfig: ImageConfig?
     
     var alternativeTextHint: String {
-        artwork?.thumbnail.alt_text ?? Constants.noTextHintAvailable
+        return artwork?.thumbnail.alt_text ?? Constants.noTextHintAvailable
     }
     
     var alternativeTextLabel: String {
-        Constants.alternativeTextLabel
+        return Constants.alternativeTextLabel
     }
    
     var title: String? {
@@ -35,7 +36,11 @@ internal import UIKit
     var description: String? {
         artwork?.description.decoded
     }
-    
+
+	var shortDescription: String? {
+		artwork?.short_description
+	}
+
     var imageURL: URL? {
         URL(string: "\(imageConfig?.iiif_url ?? "")/\(artwork?.image_id ?? "")/full/843,/0/default.jpg")
     }
@@ -47,9 +52,9 @@ internal import UIKit
     
     // MARK: Public Properties
     @MainActor
-    func getArtwork() async {
+	func getArtwork(id: String) async {
         isLoading = true
-        guard let data = try? await networking.getArtwork(id: "129884") else { return }
+        guard let data = try? await networking.getArtwork(id: id) else { return }
         self.artwork = data.data
         imageConfig = data.config
         isLoading = false

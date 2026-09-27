@@ -1,0 +1,30 @@
+{
+  "configurations" : [
+    {
+      "id" : "94735455-8A0D-4DF7-8305-69FAFD80AE7E",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "performanceAntipatternCheckerEnabled" : true,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:ChigagoArt.xcodeproj",
+      "identifier" : "1DCA40842FCC74C9005884CE",
+      "name" : "ChigagoArt"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : false,
+      "target" : {
+        "containerPath" : "container:ChigagoArt.xcodeproj",
+        "identifier" : "1DCA40912FCC74CA005884CE",
+        "name" : "ChigagoArtTests"
+      }
+    }
+  ],
+  "version" : 1
+}

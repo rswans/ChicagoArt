@@ -15,7 +15,10 @@ final class NetworkingTests: XCTestCase {
                                                               thumbnail: Thumbnail(lqip: "data:image/gif;base64,R0lGODlhBAAFAPQAABw/Zhg/aBRBaBZBahRCaxxBahxEahNIchZJcR9LdB9OdiZIZSBEbShLbjxRZyBPeipRcSpReUpWaitXgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAEAAUAAAURoMJIDhJAywAcAlEkxhNNTQgAOw==",
                                                                                    width: 5376,
                                                                                    height: 6112,
-                                                                                   alt_text: "Abstract painting composed of small vertical dabs of multiple shades of blue with a small area of similar strokes of red, orange, and yellow in the upper right."))))
+																				   alt_text: "Abstract painting composed of small vertical dabs of multiple shades of blue with a small area of similar strokes of red, orange, and yellow in the upper right."),
+															  image_id: "12345"),
+											config: ImageConfig(iiif_url: "",
+																website_url: "")))
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.5)

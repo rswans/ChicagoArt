@@ -24,6 +24,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D323A0F306936F6008BECF9 /* ChigagoArt.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = ChigagoArt.xctestplan; sourceTree = "<group>"; };
 		1DCA40852FCC74C9005884CE /* ChigagoArt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChigagoArt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DCA40922FCC74CA005884CE /* ChigagoArtTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChigagoArtTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DCA409C2FCC74CA005884CE /* ChigagoArtUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChigagoArtUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,22 +41,17 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		1D3239FE30692FFE008BECF9 /* UnitTesting */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = UnitTesting;
+			sourceTree = "<group>";
+		};
 		1DCA40872FCC74C9005884CE /* ChigagoArt */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				1DCA40BC2FCC93C5005884CE /* Exceptions for "ChigagoArt" folder in "ChigagoArt" target */,
 			);
 			path = ChigagoArt;
-			sourceTree = "<group>";
-		};
-		1DCA40952FCC74CA005884CE /* ChigagoArtTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ChigagoArtTests;
-			sourceTree = "<group>";
-		};
-		1DCA409F2FCC74CA005884CE /* ChigagoArtUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ChigagoArtUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -88,10 +84,10 @@
 		1DCA407C2FCC74C9005884CE = {
 			isa = PBXGroup;
 			children = (
+				1D323A0F306936F6008BECF9 /* ChigagoArt.xctestplan */,
 				1DCA40872FCC74C9005884CE /* ChigagoArt */,
-				1DCA40952FCC74CA005884CE /* ChigagoArtTests */,
-				1DCA409F2FCC74CA005884CE /* ChigagoArtUITests */,
 				1DCA40862FCC74C9005884CE /* Products */,
+				1D3239FE30692FFE008BECF9 /* UnitTesting */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,7 +140,7 @@
 				1DCA40942FCC74CA005884CE /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				1DCA40952FCC74CA005884CE /* ChigagoArtTests */,
+				1D3239FE30692FFE008BECF9 /* UnitTesting */,
 			);
 			name = ChigagoArtTests;
 			packageProductDependencies = (
@@ -165,9 +161,6 @@
 			);
 			dependencies = (
 				1DCA409E2FCC74CA005884CE /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				1DCA409F2FCC74CA005884CE /* ChigagoArtUITests */,
 			);
 			name = ChigagoArtUITests;
 			packageProductDependencies = (
