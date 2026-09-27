@@ -20,7 +20,7 @@ internal import UIKit
     private(set) var isLoading = true
 
     var alternativeTextHint: String {
-        return artwork?.thumbnail.alt_text ?? Constants.noTextHintAvailable
+        return artwork?.thumbnail?.alt_text ?? Constants.noTextHintAvailable
     }
     
     var alternativeTextLabel: String {
@@ -36,7 +36,7 @@ internal import UIKit
     }
     
     var description: String? {
-        artwork?.description.decoded
+        artwork?.description?.decoded
     }
 
 	var shortDescription: String? {

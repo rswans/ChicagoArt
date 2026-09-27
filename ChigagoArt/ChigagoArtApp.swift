@@ -4,8 +4,7 @@ import SwiftUI
 struct ChigagoArtApp: App {
     var body: some Scene {
         WindowGroup {
-			ContentView(productViewModel: ProductViewModel(artworkID: "129884",
-														   networking: NetworkingService()))
+			ContentView(productListViewModel: ProductListViewModel(networking: NetworkingService()))
         }
     }
 }

@@ -2,9 +2,9 @@ import SwiftUI
 import WebKit
 
 struct ContentView: View {
-	let productViewModel: ProductViewModel
+	let productListViewModel: ProductListViewModel
 
     var body: some View {
-        ProductView(viewModel: productViewModel)
+        ProductListView(viewModel: productListViewModel)
     }
 }

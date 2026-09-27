@@ -7,9 +7,9 @@ struct ArtworkData: Codable {
 	let id: Double
 	let title: String
 	let artist_display: String
-	let description: String
-	let short_description: String
-	let thumbnail: Thumbnail
+	let description: String?
+	let short_description: String?
+	let thumbnail: Thumbnail?
 	let image_id: String
 }
 
